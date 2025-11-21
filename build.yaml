@@ -26,7 +26,7 @@ include:
     shield: settings_reset
 #  --- dongle ---
   - board: raytac_mdbt50q_rx
-    shield: mona2_dongle rgbled_adapter
-    snippet: studio-rpc-usb-uart
+    shield: mona2_dongle
+    # snippet: studio-rpc-usb-uart
   - board: raytac_mdbt50q_rx
     shield: settings_reset
