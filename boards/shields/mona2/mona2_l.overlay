@@ -1,4 +1,4 @@
-#include "mona2.dtsi"
+#include "mona2_peripheral.dtsi"
 
 &kscan0 {
         col-gpios

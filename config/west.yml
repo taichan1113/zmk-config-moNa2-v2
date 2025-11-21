@@ -12,6 +12,10 @@ manifest:
       url-base: https://github.com/caksoylar  
     - name: zettaface  # <-- Input Processor Keybind
       url-base: https://github.com/zettaface
+    # --- dongle ---
+    - name: rschenk
+      url-base: https://github.com/rschenk
+    # --- dongle end ---
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -29,5 +33,10 @@ manifest:
     - name: zmk-input-processor-keybind
       remote: zettaface
       revision: main
+    # --- dongle ---
+    - name: zmk-component-raytac-dongle
+      remote: rschenk
+      revision: main
+    # --- dongle end ---
   self:
     path: config
