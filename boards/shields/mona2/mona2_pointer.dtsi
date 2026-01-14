@@ -1,0 +1,22 @@
+#include <input/processors.dtsi>
+
+/ {
+    // dongle listner
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+        
+        split_peripheral: split_peripheral@0 {
+            status = "okay";
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+    };
+
+    listner_peripheral: listner_peripheral {
+        compatible = "zmk,input-listener";
+        device = <&split_peripheral>;
+        status = "disabled";
+    };
+
+};
