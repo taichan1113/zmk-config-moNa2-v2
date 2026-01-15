@@ -16,18 +16,18 @@ endif
 
 # --- dongle above ---
 
-if SHIELD_MONA2_R
-
-config ZMK_POINTING
-    default y
-
-config SPI
-    default y
-
-config PAW3222
-    default y
-
-endif
+#if SHIELD_MONA2_R
+#
+#config ZMK_POINTING
+#    default y
+#
+#config SPI
+#    default y
+#
+#config PAW3222
+#    default y
+#
+#endif
 
 
 if SHIELD_MONA2_R || SHIELD_MONA2_L
@@ -38,8 +38,8 @@ config NFCT_PINS_AS_GPIOS
 config ZMK_SPLIT
     default y
 
-config INPUT
-    default y
+#config INPUT
+#    default y
 
 #config RGBLED_WIDGET_BATTERY_LEVEL_HIGH
 #    default 30

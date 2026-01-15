@@ -1,9 +1,7 @@
 #include "mona2_kb.dtsi"
+// #include "mona2_pointer.dtsi"
 
 /{
-  chosen {
-    zmk,kscan = &kscan0;
-    };
 
     kscan0: mat_kscan_0 {
     compatible = "zmk,kscan-gpio-matrix";

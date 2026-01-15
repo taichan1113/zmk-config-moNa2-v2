@@ -1,12 +1,8 @@
 #include "mona2_kb.dtsi"
 #include "mona2_pointer.dtsi"
-#include <dt-bindings/zmk/matrix_transform.h>
 
 / {
-    chosen {
-        zmk,kscan = &kscan0;
-    };
-
+ 
     kscan0: mock_kscan_0 {
         compatible = "zmk,kscan-mock";
         columns = <0>;
@@ -17,7 +13,7 @@
 
 &listner_peripheral {
     status = "okay";
-    input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
-    , <&zip_xy_scaler 1 10>;
+    // input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>;
+    // , <&zip_xy_scaler 1 10>;
     // , <&zip_xy_to_scroll_mapper>;
 };
