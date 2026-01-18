@@ -27,6 +27,7 @@ include:
 #  --- dongle ---
   - board: raytac_mdbt50q_rx
     shield: mona2_dongle
-    # snippet: studio-rpc-usb-uart
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: raytac_mdbt50q_rx
     shield: settings_reset

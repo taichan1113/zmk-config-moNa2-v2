@@ -17,6 +17,8 @@ manifest:
     # --- dongle ---
     - name: rschenk
       url-base: https://github.com/rschenk
+    - name: BP
+      url-base: https://github.com/taichan1113
     # --- dongle end ---
   projects:
     - name: zmk
@@ -28,18 +30,17 @@ manifest:
       # revision: zmk-0.3
     - name: zmk-driver-paw3222
       remote: sekigon-gonnoc
-      # remote: tttuemura
       revision: main
-    # - name: zmk-rgbled-widget
-    #   remote: caksoylar
-    #   revision: main
+    - name: zmk-rgbled-widget
+      remote: caksoylar
+      revision: main
     # - name: zmk-input-processor-keybind
     #   remote: zettaface
     #   revision: main
     # --- dongle ---
     - name: zmk-component-raytac-dongle
-      remote: rschenk
-      revision: v0.3
+      remote: BP
+      revision: BP/v0.3
     # --- dongle end ---
   self:
     path: config
