@@ -1,21 +1,22 @@
-#include <input/processors.dtsi>
-#include <dt-bindings/zmk/input_transform.h>
-#include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
+
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 480
+
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
+// #include <dt-bindings/zmk/input_transform.h>
+// #include <zephyr/dt-bindings/input/input-event-codes.h>
+// #include <dt-bindings/zmk/bt.h>
+// #include <input/processors.dtsi>
+
 #include "keycode_japanese.h"
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 480
 
 #define DEFAULT 0
 #define SYMBOL 1
 #define NAVNUM 2
 #define FCN 3
-#define DEVICE 4
-#define MOUSE 5
 
 &mt {
     flavor = "hold-preferred";
