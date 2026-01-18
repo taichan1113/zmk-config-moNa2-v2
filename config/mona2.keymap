@@ -26,37 +26,6 @@
 };
 
 / {
-    // conditional_layers {
-    //     compatible = "zmk,conditional-layers";
-    //     device_layer {
-    //         if-layers = <SYMBOL NAVNUM>;
-    //         then-layer = <DEVICE>;
-    //     };
-    // };
-
-    combos {
-        // compatible = "zmk,combos";
-
-        // layer4_ESC {
-        //     bindings = <&lt 4 ESC>;
-        //     key-positions = <39 38>;
-        // };
-
-        // tab {
-        //     bindings = <&kp TAB>;
-        //     key-positions = <11 12>;
-        // };
-    };
-
-    macros {
-        // to_layer_0: to_layer_0 {
-        //     compatible = "zmk,behavior-macro-one-param";
-        //     #binding-cells = <1>;
-        //     bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
-        //     label = "TO_LAYER_0";
-        // };
-    };
-
     behaviors {
         // Japanese settings
         minus: jp-minus {
@@ -96,81 +65,33 @@
             bindings = <&mo>, <&kp>;
         };
         // Encoders
-        alt_p: alt-positive {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp TAB>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-            keep-mods = <(MOD_LALT)>;
-        };
-        gui_p: gui-positive {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp RIGHT>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-            keep-mods = <(MOD_LGUI)>;
-        };
         ag_p: alt-gui-positive {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&gui_p>, <&alt_p>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
-        arrow_p: arrow-positive {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp RIGHT>, <&kp DOWN>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-        };
-        vol_arrow_p: volume-arrow-positive {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp C_VOL_UP>, <&arrow_p>;
-            mods = <(MOD_LSFT|MOD_RSFT|MOD_LCTL|MOD_RCTL)>;
+            bindings = <&kp TAB>, <&kp RIGHT>;
+            mods = <(MOD_LGUI)>;
+            keep-mods = <(MOD_LGUI)>;
         };
         vol_alt_gui_p: volume-alt-gui-positive {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&vol_arrow_p>, <&ag_p>;
-            mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)>;
-        };
-        alt_n: alt-negative {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LS(TAB)>;
-            mods = <(MOD_LALT|MOD_RALT)>;
+            bindings = <&kp C_VOL_UP>, <&ag_p>;
+            mods = <(MOD_LALT|MOD_LGUI)>;
             keep-mods = <(MOD_LALT)>;
-        };
-        gui_n: gui-negative {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LEFT>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-            keep-mods = <(MOD_LGUI)>;
         };
         ag_n: alt-gui-negative {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&gui_n>, <&alt_n>;
-            mods = <(MOD_LALT|MOD_RALT)>;
+            bindings = <&kp LS(TAB)>, <&kp LEFT>;
+            mods = <(MOD_LGUI)>;
+            keep-mods = <(MOD_LGUI)>;
         };
-        arrow_n: arrow-negative {
+        vol_alt_gui_n: volume-alt-gui-negative {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp LEFT>, <&kp UP>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-        };
-        vol_arrow_n: volume-arrow-negative {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp C_VOL_DN>, <&arrow_n>;
-            mods = <(MOD_LSFT|MOD_RSFT|MOD_LCTL|MOD_RCTL)>;
-        };
-        vol_alt_gui_n: volume-right-alt-gui-negative {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&vol_arrow_n>, <&ag_n>;
-            mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)>;
+            bindings = <&kp C_VOL_DN>, <&ag_n>;
+            mods = <(MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LALT)>;
         };
         vol_alt_tab: volume-alt-tab {
             compatible = "zmk,behavior-sensor-rotate";
