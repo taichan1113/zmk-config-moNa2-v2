@@ -45,6 +45,7 @@
 // Overrides for the input listener node
 &trackball_split {
     device = <&trackball>;
+    // input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>;
     
 
     // scroller {

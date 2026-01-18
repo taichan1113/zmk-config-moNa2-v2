@@ -9,22 +9,32 @@
         rows = <0>;
         events = <0>;
     };
+    
+    // input_processors {
+    //     zip_scroll_to_xy_mapper: zip_scroll_to_xy_mapper {
+    //         compatible = "zmk,input-processor-code-mapper";
+    //         #input-processor-cells = <0>;
+    //         type = <INPUT_EV_REL>;
+    //         map = <INPUT_REL_WHEEL INPUT_REL_Y>,
+    //               <INPUT_REL_HWHEEL INPUT_REL_X>;
+    //     };
+    // };
 };
 
 &listner_peripheral {
     status = "okay";
+    input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
+    , <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
 
-    default {
-        layers = <0>;
-        input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
-        , <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
-        process-next;
-    };
+    // default {
+    //     layers = <0>;
+    //     // process-next;
+    // };
 
-    scroller {
-        layers = <1>;
-        input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
-        , <&zip_xy_to_scroll_mapper>;
-        process-next;
-    };
+    // scroller {
+    //     layers = <1>;
+    //     input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
+    //     , <&zip_xy_to_scroll_mapper>;
+    //     process-next;
+    // };
 };
