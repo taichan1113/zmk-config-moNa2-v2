@@ -13,8 +13,18 @@
 
 &listner_peripheral {
     status = "okay";
-    input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
-    , <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
-    // , <&zip_xy_scaler 1 10>;
-    // , <&zip_xy_to_scroll_mapper>;
+
+    default {
+        layers = <0>;
+        input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
+        , <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
+        process-next;
+    };
+
+    scroller {
+        layers = <1>;
+        input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
+        , <&zip_xy_to_scroll_mapper>;
+        process-next;
+    };
 };

@@ -19,11 +19,6 @@
         device = <&trackball_split>;
     };
 
-    listner_central: listner_central {
-        compatible = "zmk,input-listener";
-        status = "disabled";
-    };
-
 };
 
 &pinctrl {
