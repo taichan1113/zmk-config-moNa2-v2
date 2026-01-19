@@ -1,0 +1,24 @@
+&encoder {
+    status = "okay";
+};
+
+&spi0 {
+    status = "disabled";
+};
+
+&listner_peripheral {
+    status = "okay";
+//     device = <&trackball_split>;
+//     input-processors = 
+//         <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+
+//     scroller {
+//         layers = <1>;
+//         input-processors = <&zip_xy_to_scroll_mapper>;
+//             // <&zip_scroll_scaler 1 16>;
+//     };
+};
+
+&sensors {
+    triggers-per-rotation = <12>;
+};

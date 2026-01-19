@@ -22,16 +22,24 @@ include:
     shield: mona2_r
     snippet: trackball-peripheral
     artifact-name: mona2_r_trackball_peripheral
-  - board: seeeduino_xiao_ble
-    shield: mona2_r
-    snippet: "studio-rpc-usb-uart trackball-central"
-    artifact-name: mona2_r_trackball_central
-    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
+
+  # - board: seeeduino_xiao_ble
+  #   shield: mona2_r
+  #   snippet: "studio-rpc-usb-uart trackball-central"
+  #   artifact-name: mona2_r_trackball_central
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
 
   - board: seeeduino_xiao_ble
     shield: mona2_l
     snippet: non-trackball-peripheral
     artifact-name: mona2_l_non_trackball_peripheral
+
+  # - board: seeeduino_xiao_ble
+  #   shield: mona2_l
+  #   snippet: "studio-rpc-usb-uart non-trackball-central"
+  #   artifact-name: mona2_l_non_trackball_central
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
+
 #  --- dongle ---
   - board: raytac_mdbt50q_rx
     shield: mona2_dongle
@@ -39,6 +47,7 @@ include:
     artifact-name: mona2_dongle_central
     cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
 # --- dongle end ---
+
   - board: seeeduino_xiao_ble
     shield: settings_reset
   - board: raytac_mdbt50q_rx

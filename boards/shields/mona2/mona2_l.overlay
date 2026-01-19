@@ -2,7 +2,7 @@
 
 /{
 
-    kscan0: mat_kscan_0 {
+  kscan0: mat_kscan_0 {
     compatible = "zmk,kscan-gpio-matrix";
     diode-direction = "col2row";
     wakeup-source;
