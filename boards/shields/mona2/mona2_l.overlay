@@ -1,17 +1,19 @@
-#include "mona2_kb.dtsi"
-// #include "mona2_pointer.dtsi"
+#include "mona2.dtsi"
 
 /{
 
     kscan0: mat_kscan_0 {
     compatible = "zmk,kscan-gpio-matrix";
     diode-direction = "col2row";
+    wakeup-source;
+
     row-gpios
     = <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
     , <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
     , <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
     , <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 			
     ;
+    
     col-gpios
     = <&xiao_d 10 GPIO_ACTIVE_HIGH>
     , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
@@ -23,10 +25,14 @@
   };
 };
 
-&left_encoder {
-    compatible = "alps,ec11";
-    a-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    b-gpios = <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    steps = <24>;
+&encoder {
     status = "okay";
+};
+
+&sensors {
+    triggers-per-rotation = <12>;
+};
+
+&spi0 {
+    status = "disabled";
 };

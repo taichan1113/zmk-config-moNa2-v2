@@ -1,3 +1,5 @@
+name: zmk-config-mona2
 build:
   settings:
     board_root: .
+    snippet_root: .

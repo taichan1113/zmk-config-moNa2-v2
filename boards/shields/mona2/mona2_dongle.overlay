@@ -1,5 +1,4 @@
-#include "mona2_kb.dtsi"
-#include "mona2_pointer.dtsi"
+#include "mona2.dtsi"
 
 / {
  
@@ -21,20 +20,18 @@
     // };
 };
 
-&listner_peripheral {
-    status = "okay";
-    input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
-    , <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
+// &listner_peripheral {
+//     status = "okay";
+//     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 
-    // default {
-    //     layers = <0>;
-    //     // process-next;
-    // };
+//     // default {
+//     //     layers = <0>;
+//     //     // process-next;
+//     // };
 
-    // scroller {
-    //     layers = <1>;
-    //     input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
-    //     , <&zip_xy_to_scroll_mapper>;
-    //     process-next;
-    // };
-};
+//     scroller {
+//         layers = <1>;
+//         input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
+//         , <&zip_xy_to_scroll_mapper>;
+//     };
+// };

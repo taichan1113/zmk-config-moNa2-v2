@@ -1,17 +1,19 @@
-#include "mona2_kb.dtsi"
-#include "mona2_pointer.dtsi"
+#include "mona2.dtsi"
 
 /{
 
   kscan0: mat_kscan_0 {
     compatible = "zmk,kscan-gpio-matrix";
     diode-direction = "col2row";
+    wakeup-source;
+
     row-gpios
     = <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
     , <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
     , <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
     , <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 			
     ;
+    
     col-gpios
     = <&xiao_d 10 GPIO_ACTIVE_HIGH>
     , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
@@ -27,35 +29,35 @@
 };
 
 
-&spi0 {
-    status = "okay";
+// &spi0 {
+//     status = "okay";
 
-    trackball: trackball@0 {
-    status = "okay";
-    compatible = "pixart,paw3222";  //トラボセンサ用のドライバとバインド
-    reg = <0>;
-    spi-max-frequency = <1000000>;
-    irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //P0.02を指定(MOTION)
-    res-cpi = <800>;
-    force-awake;
-};
-};
+//     trackball: trackball@0 {
+//     status = "okay";
+//     compatible = "pixart,paw3222";  //トラボセンサ用のドライバとバインド
+//     reg = <0>;
+//     spi-max-frequency = <1000000>;
+//     irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //P0.02を指定(MOTION)
+//     res-cpi = <800>;
+//     force-awake;
+// };
+// };
 
 
 // Overrides for the input listener node
-&trackball_split {
-    device = <&trackball>;
-    // input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>;
+// &trackball_split {
+//     device = <&trackball>;
+//     // input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>;
     
 
-    // scroller {
-    //     layers = <3>;
-    //     input-processors = 
-    //         // <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,        //X軸とY軸の入れ替え
-    //         <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,       //X軸反転
-    //         <&zip_xy_to_scroll_mapper>,                         //スクロールモードに変更
-    //         <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,   //スクロールのX軸反転
-    //         <&zip_scroll_scaler 1 5>;                           //スクロール量を1/4倍
-    // };
+//     // scroller {
+//     //     layers = <3>;
+//     //     input-processors = 
+//     //         // <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,        //X軸とY軸の入れ替え
+//     //         <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,       //X軸反転
+//     //         <&zip_xy_to_scroll_mapper>,                         //スクロールモードに変更
+//     //         <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,   //スクロールのX軸反転
+//     //         <&zip_scroll_scaler 1 5>;                           //スクロール量を1/4倍
+//     // };
 
-};
+// };

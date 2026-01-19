@@ -30,6 +30,7 @@ manifest:
       # revision: zmk-0.3
     - name: zmk-driver-paw3222
       remote: sekigon-gonnoc
+      # remote: tttuemura
       revision: main
     - name: zmk-rgbled-widget
       remote: caksoylar
