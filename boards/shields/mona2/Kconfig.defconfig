@@ -1,4 +1,4 @@
-if SHIELD_MONA2_DONGLE
+if SHIELD_MONA2_R
 
     config ZMK_KEYBOARD_NAME
         default "mona2"
@@ -10,24 +10,9 @@ if SHIELD_MONA2_DONGLE
         default y
 
     config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
-        default 2
+        default 1
 
 endif
-
-# --- dongle above ---
-
-#if SHIELD_MONA2_R
-#
-#config ZMK_POINTING
-#    default y
-#
-#config SPI
-#    default y
-#
-#config PAW3222
-#    default y
-#
-#endif
 
 
 if SHIELD_MONA2_R || SHIELD_MONA2_L
@@ -37,14 +22,5 @@ config NFCT_PINS_AS_GPIOS
 
 config ZMK_SPLIT
     default y
-
-#config INPUT
-#    default y
-
-#config RGBLED_WIDGET_BATTERY_LEVEL_HIGH
-#    default 30
-
-#config RGBLED_WIDGET_BATTERY_LEVEL_CRITICAL
-#    default 10
 
 endif
