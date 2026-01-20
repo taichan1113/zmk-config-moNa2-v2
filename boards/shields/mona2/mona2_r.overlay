@@ -1,7 +1,5 @@
 #include "mona2_kb.dtsi"
 #include "mona2_pointer.dtsi"
-#include <zephyr/dt-bindings/input/input-event-codes.h>
-#include <input/processors.dtsi>
 
 /{
 
@@ -45,27 +43,21 @@
 
 
 // Overrides for the input listener node
-&listner_central {
+// &listner_central {
+//     status = "okay";
+//     device = <&trackball>;
+//     input-processors =  <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+//     scroller {
+//         layers = <1>;
+//         input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>;
+//     };
+// };
+
+&trackball_split {
     status = "okay";
     device = <&trackball>;
-    input-processors =  <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
-    scroller {
-        layers = <1>;
-        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>;
-    };
-
-    // scroller {
-    //     layers = <1>;
-    //     input-processors = 
-    //         // <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,        //X軸とY軸の入れ替え
-    //         // <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,       //X軸反転
-    //         <&zip_xy_to_scroll_mapper>,                         //スクロールモードに変更
-    //         <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,   //スクロールのX軸反転
-    //         // <&zip_scroll_scaler 1 5>;                           //スクロール量を1/4倍
-    // };
-
 };
 
-zephyr_udc0: &usbd {
-    status = "okay";
-};
+// zephyr_udc0: &usbd {
+//     status = "okay";
+// };

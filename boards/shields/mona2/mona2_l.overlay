@@ -1,5 +1,5 @@
 #include "mona2_kb.dtsi"
-// #include "mona2_pointer.dtsi"
+#include "mona2_pointer.dtsi"
 
 /{
 
@@ -28,5 +28,18 @@
     a-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
     b-gpios = <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
     steps = <24>;
+    status = "okay";
+};
+
+&listner_peripheral {
+    status = "okay";
+    input-processors =  <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+    scroller {
+        layers = <1>;
+        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>;
+    };
+};
+
+zephyr_udc0: &usbd {
     status = "okay";
 };
