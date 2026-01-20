@@ -18,18 +18,18 @@
 #
 ---
 include:
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble
     shield: mona2_r
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble
     shield: mona2_l
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble
     shield: settings_reset
-    artifact-name: seeeduino_xiao_ble_settings_reset
+    artifact-name: xiao_ble_settings_reset
 #  --- dongle ---
-  - board: raytac_mdbt50q_rx
+  - board: mdbt50q_rx
     shield: mona2_dongle
     snippet: zmk-usb-logging
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-  - board: raytac_mdbt50q_rx
+  - board: mdbt50q_rx
     shield: settings_reset
     artifact-name: raytac_mdbt50q_rx_settings_reset
