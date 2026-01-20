@@ -4,37 +4,31 @@
 / {
  
     kscan0: mock_kscan_0 {
-        compatible = "zmk,kscan-mock";
-        columns = <0>;
-        rows = <0>;
-        events = <0>;
-    };
-    
-    // input_processors {
-    //     zip_scroll_to_xy_mapper: zip_scroll_to_xy_mapper {
-    //         compatible = "zmk,input-processor-code-mapper";
-    //         #input-processor-cells = <0>;
-    //         type = <INPUT_EV_REL>;
-    //         map = <INPUT_REL_WHEEL INPUT_REL_Y>,
-    //               <INPUT_REL_HWHEEL INPUT_REL_X>;
-    //     };
-    // };
+        // compatible = "zmk,kscan-mock";
+        // columns = <1>;
+        // rows = <1>;
+        // events = <0>;
+
+        compatible = "zmk,kscan-gpio-direct";
+        wakeup-source;
+        input-gpios
+            = <&gpio0 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    };  
+};
+
+&default_transform {
+    col-offset = <5>;
 };
 
 &listner_peripheral {
     status = "okay";
-    input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
-    , <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
-
-    // default {
-    //     layers = <0>;
-    //     // process-next;
-    // };
-
-    // scroller {
-    //     layers = <1>;
-    //     input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>
-    //     , <&zip_xy_to_scroll_mapper>;
-    //     process-next;
-    // };
+    input-processors =  <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+    scroller {
+        layers = <1>;
+        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>;
+    };
 };
+
+// zephyr_udc0: &usbd {
+//     status = "okay";
+// };
