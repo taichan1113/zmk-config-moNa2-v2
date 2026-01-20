@@ -39,8 +39,8 @@ manifest:
     #   revision: main
     # --- dongle ---
     - name: zmk-component-raytac-dongle
-      remote: BP
-      revision: BP/v0.3
+      remote: rschenk
+      revision: v0.3
     # --- dongle end ---
   self:
     path: config
