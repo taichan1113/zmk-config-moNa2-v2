@@ -14,20 +14,15 @@ manifest:
       url-base: https://github.com/caksoylar  
     - name: zettaface  # <-- Input Processor Keybind
       url-base: https://github.com/zettaface
-    # --- dongle ---
-    - name: rschenk
+    - name: rschenk  # <-- dongle
       url-base: https://github.com/rschenk
     - name: BP
       url-base: https://github.com/taichan1113
-    # --- dongle end ---
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    # - name: zmk-pmw3610-driver
-    #   remote: badjeff
-      # revision: zmk-0.3
     - name: zmk-driver-paw3222
       remote: sekigon-gonnoc
       revision: main
@@ -37,10 +32,8 @@ manifest:
     # - name: zmk-input-processor-keybind
     #   remote: zettaface
     #   revision: main
-    # --- dongle ---
     - name: zmk-component-raytac-dongle
       remote: rschenk
       revision: v0.4
-    # --- dongle end ---
   self:
     path: config
