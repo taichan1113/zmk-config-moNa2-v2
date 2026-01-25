@@ -104,9 +104,9 @@
             label="Def";
             bindings = <
 &kp Q          &kp W     &kp E    &kp R               &kp T                     &bootloader               &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A          &kp S     &kp D    &kp F               &kp G                                 &sqt          &kp H        &kp J  &kp K      &kp L    &semi
+&kp A          &kp S     &kp D    &kp F               &kp G                                 &minus        &kp H        &kp J  &kp K      &kp L    &semi
 &kp Z          &kp X     &kp C    &kp V               &kp B            &lth FCN TAB         &kp LGUI      &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&mt LCTRL ESC  &kp LGUI  &kp LALT &lth SYMBOL SPACE   &lth NAVNUM TAB  &minus               &kp LALT      &mt LSHFT RET                           &sqt
+&mt LCTRL ESC  &kp LGUI  &kp LALT &lth SYMBOL SPACE   &lth NAVNUM TAB  &mt LCTRL TAB        &kp LALT      &mt LSHFT RET                           &sqt
             >;
             sensor-bindings = <&vol_alt_tab>;
         };
@@ -115,7 +115,7 @@
             label="Sym";
             bindings = <
 &kp JP_EXCL  &kp JP_AT     &kp JP_HASH     &kp JP_DLLR         &kp JP_PRCNT            &bootloader                  &kp JP_YEN   &kp JP_GRAVE  &kp JP_ASTRK  &kp JP_LPAR  &kp JP_RPAR  
-&kp JP_PLUS  &kp JP_MINUS  &kp JP_SLASH    &kp JP_ASTRK        &kp JP_EQUAL                           &kp JP_DQT    &kp LANG1    &kp JP_LBRC   &kp JP_LBKT   &kp JP_RBKT  &kp JP_COLON
+&kp JP_PLUS  &kp JP_MINUS  &kp JP_SLASH    &kp JP_ASTRK        &kp JP_EQUAL                           &kp JP_UNDER  &kp LANG1    &kp JP_LBRC   &kp JP_LBKT   &kp JP_RBKT  &kp JP_COLON
 &kp JP_PIPE  &kp JP_UNDER  &kp JP_TILDE    &kp JP_CARET        &kp JP_AMPS   &to DEFAULT              &to SYMBOL    &kp LANG2    &kp JP_RBRC   &kp JP_LT     &kp JP_GT    &kp JP_QMARK 
 &trans       &trans        &trans          &trans              &trans        &trans                   &trans        &kp LS(RET)                                           &kp JP_DQT       
             >;
