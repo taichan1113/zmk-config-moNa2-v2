@@ -2,14 +2,12 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: sayu-hub
-      url-base: https://github.com/sayu-hub
+    # - name: sayu-hub
+    #   url-base: https://github.com/sayu-hub
     - name: badjeff    # <-- PMW3610
       url-base: https://github.com/badjeff
     - name: sekigon-gonnoc  # <-- PAW3222
       url-base: https://github.com/sekigon-gonnoc
-    - name: tttuemura
-      url-base: https://github.com/tttuemura
     - name: caksoylar  # <-- RGB LED
       url-base: https://github.com/caksoylar  
     - name: zettaface  # <-- Input Processor Keybind
@@ -32,6 +30,9 @@ manifest:
     # - name: zmk-input-processor-keybind
     #   remote: zettaface
     #   revision: main
+    - name: zmk-input-processor-xyz
+      remote: badjeff
+      revision: main
     - name: zmk-component-raytac-dongle
       remote: rschenk
       revision: v0.4

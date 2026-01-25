@@ -1,5 +1,7 @@
 #include "mona2_kb.dtsi"
 #include "mona2_pointer.dtsi"
+#include <input/processors/xyz.dtsi>
+
 
 /{
 
@@ -46,4 +48,5 @@
 &trackball_split {
     status = "okay";
     device = <&trackball>;
+    input-processors = <&zip_xyz>;
 };

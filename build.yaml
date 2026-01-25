@@ -19,12 +19,11 @@
 ---
 include:
   - board: xiao_ble
-    shield: mona2_r
+    shield: mona2_r rgbled_adapter
   - board: xiao_ble
-    shield: mona2_l
+    shield: mona2_l rgbled_adapter
   - board: mdbt50q_rx
     shield: mona2_dongle
-    # snippet: zmk-usb-logging
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: xiao_ble
@@ -32,4 +31,4 @@ include:
     artifact-name: xiao_ble_settings_reset
   - board: mdbt50q_rx
     shield: settings_reset
-    artifact-name: raytac_mdbt50q_rx_settings_reset
+    artifact-name: mdbt50q_rx_settings_reset
