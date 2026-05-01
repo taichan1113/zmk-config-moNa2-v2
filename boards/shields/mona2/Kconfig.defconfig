@@ -38,3 +38,13 @@ config RGBLED_WIDGET_BATTERY_LEVEL_CRITICAL
     default 10
 
 endif
+
+if ZMK_BACKLIGHT
+
+config PWM
+    default y
+
+config LED_PWM
+    default y
+
+endif # ZMK_BACKLIGHT
