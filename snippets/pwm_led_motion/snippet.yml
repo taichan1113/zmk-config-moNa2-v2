@@ -1,0 +1,4 @@
+name: pwm_led_motion
+append:
+  EXTRA_DTC_OVERLAY_FILE: pwm_led_motion.overlay
+  EXTRA_CONF_FILE: pwm_led_motion.conf

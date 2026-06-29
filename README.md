@@ -1,6 +1,6 @@
 COROPITを使用する方は以下のようにコードを編集してください。
 
-mona2_r.overlay
+snippets/trackball_pmw3610/trackball_pmw3610.overlay
 
 修正前
 ```
