@@ -27,7 +27,7 @@
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
+    // cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>; GND
 
     trackball_central: trackball_central@0 {
         status = "okay";
@@ -43,6 +43,9 @@
 &trackball_central_listener {
     status = "okay";
     device = <&trackball_central>;
+    input-processors =
+        <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
+        <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
 
     scroller {
         layers = <2>;
